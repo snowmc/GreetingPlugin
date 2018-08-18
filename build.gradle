@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'java-gradle-plugin'
+}
+
+group 'net.snowmc.greeting'
+version '0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+gradlePlugin {
+    plugins {
+        greetingsPlugin {
+            id = 'net.snowmc.greeting'
+            implementationClass = 'net.snowmc.greeting.GreetingPlugin'
+        }
+    }
+}
